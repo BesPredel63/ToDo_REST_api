@@ -20,6 +20,7 @@ namespace ToDo_REST_api.Services {
                 var temp = g.ExecuteDate;
                 string jsonDate = JsonSerializer.Serialize(temp);
             }
+            return result;
         }
     }
 }

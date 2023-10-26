@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using ToDo_REST_api.AppDb;
 using ToDo_REST_api.Models;
 
@@ -26,7 +27,10 @@ namespace ToDo_REST_api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Goal>>> GetGoals()
         {
-            var result = await _context.Goals.Include(g => g.Category).ToListAsync();
+            //var result = await _context.Goals.Include(g => g.Category).ToListAsync();
+            var result = await _context.Goals.ToListAsync();
+            //var temp = JsonConvert.SerializeObject(result);
+            Console.WriteLine(result);
             return Ok(result);
         }
 
