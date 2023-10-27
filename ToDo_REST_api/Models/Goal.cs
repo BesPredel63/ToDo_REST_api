@@ -9,7 +9,6 @@ namespace ToDo_REST_api.Models {
         public string Description { get; set; }
         public bool IsActive { get; set; } = true;
         public int CategoryId { get; set; }
-        [JsonIgnore]
         public Category Category { get; set; }
     }
 }

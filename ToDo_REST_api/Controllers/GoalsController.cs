@@ -27,10 +27,7 @@ namespace ToDo_REST_api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Goal>>> GetGoals()
         {
-            //var result = await _context.Goals.Include(g => g.Category).ToListAsync();
-            var result = await _context.Goals.ToListAsync();
-            //var temp = JsonConvert.SerializeObject(result);
-            Console.WriteLine(result);
+            var result = await _context.Goals.Include(g => g.Category).ToListAsync();
             return Ok(result);
         }
 
