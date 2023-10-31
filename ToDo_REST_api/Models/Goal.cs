@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.Json.Serialization;
 
 namespace ToDo_REST_api.Models {
     public class Goal {
